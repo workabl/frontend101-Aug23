@@ -4,9 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Resume</title>
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- INTERNAL -->
         <style>
-            td{
-                border:1px solid #ccc;
+            body{
+                font-family: 'Hind', sans-serif;
+                color: #7A7A7A;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
             }
         </style>
     </head>
@@ -14,11 +23,12 @@
         <header>
             <table>
                 <tr>
-                    <td> 
-                        <img src="./assets/img/profile.jpeg" /> 
+                    <td>                         
+                        <img id="profilePicImage" src="./assets/img/profile.jpeg" style=""/> 
+                        <!-- INLINE -->
                     </td>
                     <td>
-                        <div>Vivaan Shekhar Sharma</div> 
+                        <div class="profilePicImage">Vivaan Shekhar Sharma</div> 
                         <div>vivaanss@gmail.com   |   +91 9733259550   |   www.vivaanss.me   |   Mumbai</div>
                         <div>United College Of Engineering, Mumbai</div>  
                     </td>
@@ -30,7 +40,7 @@
                 <tr>
                     <td>
                         <section id="profile">
-                            <div class="section-heading">Profile</div>
+                            <div id="profileSectionHeading" class="section-heading font-large">Profile</div>
                             <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
                         </section>
                         <section id="education">
@@ -38,7 +48,7 @@
                             <div class="section-content">
                                 <ul>
                                     <li>
-                                        <div class="li-heading">Bachelor of Technology (B.Tech)</div>
+                                        <div id="li-heading" class="li-heading">Bachelor of Technology (B.Tech)</div>
                                         <div class="li-content">
                                             2015 - 2019<br/>
                                             United College of Engineering, Mumbai University<br/>
