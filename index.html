@@ -16,31 +16,108 @@
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
+                width:1020px;
+                padding: 0px 60px;
+                box-sizing: border-box;
+                margin:0 auto;
+            }
+
+            .separator{
+                margin:0px 12px;
+            }
+
+            /* -------- Header styles -------- */
+            header{
+                width:100%;
+                padding:26px 0px;
+                border-top:5px solid #BF7936;
+                border-bottom:1px solid #D8D8D8;
+            }
+
+            #profilePicImage{
+                width:100px;
+                height:100px;
+                border-radius:50%;
+            }
+
+            #myName{
+                color:#212121;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+            }
+
+            #myInfo, #myCollege{
+                font-size: 15px;
+                margin-bottom:7px;
+            }
+
+            /* -------- Main styles -------- */
+
+            main{
+                width:100%;
+                padding:26px 0px;
+            }
+
+            /* -------- Footer styles -------- */
+
+            footer{
+                width:100%;
+            }
+
+            .section-heading, footer .heading{
+                color:#212121;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 700;
+            }
+
+            .li-heading{
+                color:#212121;
+                font-weight: 500;
+            }
+
+            .text-light{
+                color: #979797;
+            }
+
+            #txtMessage{
+                border-radius: 6px;
+                border: 1px solid #EAEAEA;
+                background: #FCFCFC;
+            }
+            
+            #btnSendMessage{
+                color:#ffffff;
+                font-size: 12px;
+                font-weight: 400;
+                border-radius: 6px;
+                background: #1993EB;
+                border:none;
             }
         </style>
     </head>
     <body>
         <header>
-            <table>
+            <table style="width:100%">
                 <tr>
-                    <td>                         
-                        <img id="profilePicImage" src="./assets/img/profile.jpeg" style=""/> 
-                        <!-- INLINE -->
+                    <td style="width:100px">                         
+                        <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
                     </td>
-                    <td>
-                        <div class="profilePicImage">Vivaan Shekhar Sharma</div> 
-                        <div>vivaanss@gmail.com   |   +91 9733259550   |   www.vivaanss.me   |   Mumbai</div>
-                        <div>United College Of Engineering, Mumbai</div>  
+                    <td style="padding:0px 26px">
+                        <div id="myName">Vivaan Shekhar Sharma</div> 
+                        <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
+                        <div id="myCollege">United College Of Engineering, Mumbai</div>  
                     </td>
                 </tr>
             </table>
         </header>
         <main>
-            <table>
+            <table style="width:100%">
                 <tr>
-                    <td>
+                    <td style="width:50%;padding-right:13px;box-sizing:border-box">
                         <section id="profile">
-                            <div id="profileSectionHeading" class="section-heading font-large">Profile</div>
+                            <div class="section-heading">Profile</div>
                             <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
                         </section>
                         <section id="education">
@@ -94,7 +171,7 @@
                             </div>
                         </section>
                     </td>
-                    <td>
+                    <td style="width:50%;padding-left:13px;box-sizing:border-box">
                         <section id="interships">
                             <div class="section-heading">Internships</div>
                             <div class="section-content">
@@ -157,7 +234,7 @@
             </table>
         </main>
         <footer>
-            <div id="heading" class="heading">Get In Touch</div>
+            <div class="heading">Get In Touch</div>
             <div class="footer-label">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum quas molestias sint.</div>
             <div class="form">
                 <div>
@@ -168,8 +245,93 @@
                 </div>
             </div>
         </footer>
+        <details id="notes" style="margin-top:10px;padding-top:10px;border-top:1px dotted #ccc;display:block;">
+            <summary style="padding-bottom:10px;color:#1993EB">Notes</summary>
+            <section>
+                LEARNING-FLOW
+                <ol>
+                    <li>Built HTML Skeleton With <b>table</b> - the only way to create columns with standalone html</li>
+                    <li>
+                        Beautifying with Css
+                        <ul>
+                            <li>Set the fonts first</li>
+                            <li>Set the dimensions, spacing, borders and shape together.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            <section>
+                DESIGN-THINKING
+                <ol>
+                    <li>Designers "design", frontend-devs "convert" & build "dynamic-ui"</li>
+                    <li>Key Design Principles - User Centricity, Usability, Aesthetics & Minimalism, Consistency & Standards<br/>Why? Not always will you get the desings from the designers</li>
+                    <li>Key Design Elements - Dimensions, Shape, Spacing, Typography, Alignment, Aspect-Ratio, Color(Color-Codes, Gradients, Blur, Shadows, Opacity)<br/>Why? Need to convert at-least 95%</li>
+                </ol>
+            </section>
+            <section>
+                HTML
+                <ol>
+                    <li>Html stands for "Hyper-text" "Markup" language. Maintained by W3C+WHATWG & primarily used for creating skeleton.</li>
+                    <li>Basic structure of Tags/Elements - Tags, Attributes, Events, Closing (Self-Closing for ex. &lt;br/&gt; or Normal &lt;div&gt;<i>Somethig goes here...</i>&lt;div/&gt;)</li>
+                    <li>Html has multiple tags/elements for different purposes - Skeleton, HyperText, FormElements, Formatting, Info & Imports</li>
+                    <li>Semantic tags enhance code-readability and understanding for ex. &lt;header&gt; &lt;main&gt; &lt;footer&gt; &lt;section&gt; &lt;article&gt; </li>
+                    <li>Inline-Tags (SameLine-LimitedWidth) Vs Block-Level-Tags (NewLine-FullWidth)</li>
+                </ol>
+            </section>
+            <section>
+                CSS
+                <ol>
+                    <li>Css stands for "Cascading" "Style" "Sheet"
+                        <ul>
+                            <li>"Style" - A single component of design like width, height, color etc. called "property"</li>
+                            <li>"Sheet" - A group of styles</li>
+                            <li>"Cascading" - Properties cascade down from multiple selectors from internal & external css and inline-styles, and finally applied based on the order of evaluation.</li>
+                        </ul>
+                    </li>
+                    <li>Basic structure of Properties - PropertyName: Value Unit ; For ex. background-color:#cccccc; width:100px;</li>
+                    <li>Selectors
+                        <ul>
+                            <li>Simple - Universal *{}, Element div{}, Id #id{}, Class .heading{}, Attribute section[id="profile"]{}</li>
+                            <li>Combinator - Descendant section div{}, Child section>div{}</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Css-Box-Model
+                        <ul>
+                            <li>Every element is a rectangle with 4 primary components - dimension(width/height), padding(inside-the-box), border(outside-the-box), margin(outside-the-box)</li>
+                            <li>final-dimension = given-dimension + padding + border</li>
+                            <li>box-sizing:border-box includes padding and border within the given-dimensions and helps us avoid calculations.</li>
+                            <li>Use the chrome inspector to visualize the box-model for any element. It helps you indentify the source of problem, if the dimesions are not renedering properly while Htmlizing the designs.</li>
+                            <li>Example Without box-sizing:border-box<br/>
+                                <div style="background-color:#cccccc;width:400px;height:200px;padding:10px;border:20px solid #000;margin:20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium expedita corporis nostrum, quidem eum ipsa veniam esse. Nisi odit accusamus repudiandae blanditiis magnam veniam vero maiores, quisquam voluptatem labore. Alias nesciunt aspernatur velit illum. Eligendi architecto officiis enim dicta </div>
+                                Example with box-sizing:border-box<br/>
+                                <div style="background-color:#cccccc;width:400px;height:200px;padding:10px;border:20px solid #000;margin:20px;box-sizing:border-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium expedita corporis nostrum, quidem eum ipsa veniam esse. Nisi odit accusamus repudiandae blanditiis magnam veniam vero maiores, quisquam voluptatem labore. Alias nesciunt aspernatur velit illum. Eligendi architecto officiis</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Shorthand of Properties. For ex.
+                        <ul>
+                            <li>padding:10px = padding-top:10px;padding-bottom:10px;padding-left:10px padding-right:10px</li>
+                            <li>padding:10px 20px = padding-top:10px;padding-bottom:10px;padding-left:20px padding-right:20px</li>
+                            <li>border:2px solid #000000 = border-width:2px;border-style:solid;border-color:#000000</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+        </details>
     </body>
+
     <!-- 
+        CSS-BOX-MODEL
+        Every element is a rectangle
+        rectangle   = width padding-x border-x margin-x
+                    = height padding-y border-y margin-y
+                    = dim padding border margin
+
+        final-width = given-width + padding-x + border-x
+        final-height = given-height + padding-y + border-y
+        <div style="background-color:#cccccc;width:800px;height:400px;padding:10px;border:20px solid #000;margin:100px;box-sizing:border-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium expedita corporis nostrum, quidem eum ipsa veniam esse. Nisi odit accusamus repudiandae blanditiis magnam veniam vero maiores, quisquam voluptatem labore. Alias nesciunt aspernatur velit illum. Eligendi architecto officiis enim dicta itaque doloremque quis, sed quas facilis eos, aspernatur, animi deserunt provident?</div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         BtnSendMessage : Pascal Case
         btnSendMessage : Camel Case
         footer-label : Kebab Casing
