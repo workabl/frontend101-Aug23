@@ -22,6 +22,14 @@
                 margin:0 auto;
             }
 
+            ul{
+                margin:0px;
+            }
+
+            td{
+                vertical-align: top;
+            }
+
             .separator{
                 margin:0px 12px;
             }
@@ -59,22 +67,40 @@
                 padding:26px 0px;
             }
 
-            /* -------- Footer styles -------- */
-
-            footer{
-                width:100%;
-            }
-
             .section-heading, footer .heading{
                 color:#212121;
                 font-size: 15px;
                 font-style: normal;
                 font-weight: 700;
+                margin-bottom:16px;
             }
 
+            .section-content{
+                margin-bottom:26px;
+                text-align:justify;
+            }
+            
             .li-heading{
                 color:#212121;
                 font-weight: 500;
+            }
+
+            .li-content{
+                margin-top:6px;
+                margin-bottom:16px;
+            }
+
+
+            /* -------- Footer styles -------- */
+
+            footer{
+                width:100%;
+                border-top:1px solid #D8D8D8;
+                padding:26px 0px;
+            }    
+            
+            .footer-label{
+                margin-bottom:6px;
             }
 
             .text-light{
@@ -85,16 +111,43 @@
                 border-radius: 6px;
                 border: 1px solid #EAEAEA;
                 background: #FCFCFC;
+                width:100%;
+                height: 94px;
+                box-sizing:border-box;
+                margin-bottom:6px;
+                padding:10px;
+                resize:none;
+
+                overflow: auto;
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                
+            }
+
+            
+            #textarea:focus-visible{
+                border:1px solid #212121;
             }
             
             #btnSendMessage{
+                width:155px;
+                height:36px;
                 color:#ffffff;
                 font-size: 12px;
                 font-weight: 400;
                 border-radius: 6px;
                 background: #1993EB;
                 border:none;
+                cursor:pointer;
             }
+
+            #btnSendMessage:hover{
+                background: #9c0a69;
+            }
+
+            
         </style>
     </head>
     <body>
@@ -115,7 +168,7 @@
         <main>
             <table style="width:100%">
                 <tr>
-                    <td style="width:50%;padding-right:13px;box-sizing:border-box">
+                    <td style="width:50%;padding-right:13px;box-sizing:border-box;">
                         <section id="profile">
                             <div class="section-heading">Profile</div>
                             <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
@@ -240,12 +293,12 @@
                 <div>
                     <textarea id="txtMessage"></textarea>
                 </div>
-                <div>
+                <div style="text-align:right">
                     <button id="btnSendMessage">Send Message</button>
                 </div>
             </div>
         </footer>
-        <details id="notes" style="margin-top:10px;padding-top:10px;border-top:1px dotted #ccc;display:block;">
+        <details id="notes" style="display:block;margin-top:10px;padding-top:10px;border-top:1px dotted #ccc;">
             <summary style="padding-bottom:10px;color:#1993EB">Notes</summary>
             <section>
                 LEARNING-FLOW
@@ -279,7 +332,7 @@
                 </ol>
             </section>
             <section>
-                CSS
+                CSS - BASICS
                 <ol>
                     <li>Css stands for "Cascading" "Style" "Sheet"
                         <ul>
@@ -307,6 +360,7 @@
                                 Example with box-sizing:border-box<br/>
                                 <div style="background-color:#cccccc;width:400px;height:200px;padding:10px;border:20px solid #000;margin:20px;box-sizing:border-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium expedita corporis nostrum, quidem eum ipsa veniam esse. Nisi odit accusamus repudiandae blanditiis magnam veniam vero maiores, quisquam voluptatem labore. Alias nesciunt aspernatur velit illum. Eligendi architecto officiis</div>
                             </li>
+                            <li>Margins may not work everywhere</li>
                         </ul>
                     </li>
                     <li>Shorthand of Properties. For ex.
@@ -316,9 +370,61 @@
                             <li>border:2px solid #000000 = border-width:2px;border-style:solid;border-color:#000000</li>
                         </ul>
                     </li>
+                    <li>Alignments
+                        <ul>
+                            <li>text-align property for horizontal alignment</li>
+                            <li>vertical-align property for vertical alignment. Vertical-Align only works in td's, not in divs</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            <section style="display:none;">
+                <style>
+                    .position-demo-container{
+                        width:600px;height:240px;border:1px solid #cccccc;padding:10px;margin-bottom:20px;
+                    }
+    
+                    .position-demo-container > div{
+                        width:100%;color:#ffffff;padding:10px;box-sizing:border-box;
+                    }
+                </style>
+                CSS POSITIONS : STATIC / RELATIVE / ABSOLUTE / FIXED / STICKY
+                <ol>
+                    <li>
+                        Why not table for skeletons?
+                        <ul>
+                            <li>Every row automaticall takes max columns & merged-cells have to be redujested when a new column is added.</li>
+                            <li>Every cell in the column takes the same width.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        position:static;
+                        <div class="position-demo-container">
+                            <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
+                            <div style="height:60px;background:#D8D8D8;"></div>
+                            <div style="height:40px;background:#BF7936;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        position:relative;
+                        <div class="position-demo-container">
+                            <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
+                            <div style="height:60px;background:#D8D8D8;"></div>
+                            <div style="height:40px;background:#BF7936;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        position:absolute;
+                        <div class="position-demo-container">
+                            <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
+                            <div style="height:60px;background:#D8D8D8;position:absolute;"></div>
+                            <div style="height:40px;background:#BF7936;"></div>
+                        </div>
+                    </li>
                 </ol>
             </section>
         </details>
+       
     </body>
 
     <!-- 
