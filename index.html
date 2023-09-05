@@ -34,9 +34,25 @@
                 margin:0px 12px;
             }
 
+            /* ****************     Pre-Header      **************** */
+            
+            .pre-header{
+                width:100%;
+                height:18px;
+                background: #bf7936;
+                color:#ffffff;
+                text-align:right;
+                padding:2px 10px;
+                font-size: 12px;
+                box-sizing: border-box;
+            }
+
             /* -------- Header styles -------- */
             header{
-                width:100%;
+                background: rgba(255, 255, 255, 1);
+                position:sticky;
+                top:0;
+                width:900px;
                 padding:26px 0px;
                 border-top:5px solid #BF7936;
                 border-bottom:1px solid #D8D8D8;
@@ -146,11 +162,12 @@
             #btnSendMessage:hover{
                 background: #9c0a69;
             }
-
-            
         </style>
     </head>
     <body>
+        <div class="pre-header">
+            Github: https://github.com/vivaanss<span class="separator">|</span>LinkedIn: https://linkedin.com/vivaanss
+        </div>
         <header>
             <table style="width:100%">
                 <tr>
@@ -298,6 +315,9 @@
                 </div>
             </div>
         </footer>
+        <div style="width:60px;height:60px;background-color:#1993EB;color:#fff;padding:10px;box-sizing:border-box;text-align:cente;border-radius:50%;position:fixed;bottom:10px;right:50px">
+            <i class="fi fi-rr-arrow-small-up"></i>
+        </div>
         <details id="notes" style="display:block;margin-top:10px;padding-top:10px;border-top:1px dotted #ccc;">
             <summary style="padding-bottom:10px;color:#1993EB">Notes</summary>
             <section>
@@ -309,6 +329,13 @@
                         <ul>
                             <li>Set the fonts first</li>
                             <li>Set the dimensions, spacing, borders and shape together.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Why not table for skeletons?
+                        <ul>
+                            <li>Every row automaticall takes max columns & merged-cells have to be redujested when a new column is added.</li>
+                            <li>Every cell in the column takes the same width.</li>
                         </ul>
                     </li>
                 </ol>
@@ -378,10 +405,14 @@
                     </li>
                 </ol>
             </section>
-            <section style="display:none;">
+            <section style="display:block;">
                 <style>
                     .position-demo-container{
-                        width:600px;height:240px;border:1px solid #cccccc;padding:10px;margin-bottom:20px;
+                        width:600px;
+                        height:240px;
+                        border:1px solid #cccccc;
+                        padding:10px;
+                        margin-bottom:20px;
                     }
     
                     .position-demo-container > div{
@@ -390,15 +421,15 @@
                 </style>
                 CSS POSITIONS : STATIC / RELATIVE / ABSOLUTE / FIXED / STICKY
                 <ol>
-                    <li>
-                        Why not table for skeletons?
-                        <ul>
-                            <li>Every row automaticall takes max columns & merged-cells have to be redujested when a new column is added.</li>
-                            <li>Every cell in the column takes the same width.</li>
-                        </ul>
+                    <li>Summary
+                        
                     </li>
                     <li>
-                        position:static;
+                        position:static -
+                        <br/>- The default position of the element.
+                        <br/>- If it is a block-element, then placed to the next top-left most available position. 
+                        <br/>- If it is a inline-element, then placed next to the previous inline element.
+                        <br/>- The element positioned scrolls with the page.
                         <div class="position-demo-container">
                             <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
                             <div style="height:60px;background:#D8D8D8;"></div>
@@ -407,17 +438,51 @@
                     </li>
                     <li>
                         position:relative;
+                        <br/>- Creates a new plane (z-index) and moves onto it, maintaining its size and position (<em>Jaisa hai, Jaha jai</em>).
+                        <br/>- The following element DO NOT occpy the space vacated by the positioned element.
+                        <br/>- The positioned element scrolls with the page.
                         <div class="position-demo-container">
                             <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
-                            <div style="height:60px;background:#D8D8D8;"></div>
+                            <div style="height:60px;background:#D8D8D8;position:relative;z-index:1;top:-50px">Relatively positioned</div>
                             <div style="height:40px;background:#BF7936;"></div>
                         </div>
                     </li>
                     <li>
                         position:absolute;
-                        <div class="position-demo-container">
+                        <br/>- Creates a new plane (z-index) and moves onto it, maintaining its size and position (<em>Jaisa hai, Jaha jai</em>).
+                        <br/>- If properties like width:100% or top:50px are specified, where the element is required to evaluate its size of position, the element recursively searches for a parent with respect to which it will calculate its own properties. The recursion happens till a non-static-positioned parent is found or html tag is reached.
+                        <br/>- The following element OCCUPIES the space vacated by the positioned element.
+                        <br/>- The positioned element scrolls with the page.
+                        <div class="position-demo-container" style="position:relative">
                             <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
-                            <div style="height:60px;background:#D8D8D8;position:absolute;"></div>
+                            <div style="height:60px;background:#D8D8D8;position:absolute;">Absolute positioned</div>
+                            <div style="height:40px;background:#BF7936;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        position:fixed;
+                        <br/>- The top or left property is required with position:fixed;
+                        <br/>- With position:fixed, the element creates a new plane (z-index) and moves onto it, gets fixed at the specified position (top/bottom/left/right).
+                        <br/>- The positioned element GETS FIXED AND DOES NOT scrolls with the page.
+                        <br/>- In order to determine its dimension or position (for properties like width:100% or top:50px), the element directly refers the html element & DOES NOT recursively searches for a non-static parent.
+                        <br/>- The following element OCCUPIES the space vacated by the positioned element.                    
+                        <div class="position-demo-container" style="position:relative">
+                            <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
+                            <div style="display:none;height:60px;background:#D8D8D8;position:fixed;bottom:0px;left:0;z-index:100;">Fixed positioned - This element sticks to the bottom. Remove the display:none property for demo.</div>
+                            <div style="height:40px;background:#BF7936;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        position:sticky;
+                        <br/>- The top or left property is required with position:sticky;
+                        <br/>- With position:sticky, the element DOES NOT DO ANYTHING UNTIL the page is scrolled and the target-element reaches the specified position(top/bottom/left/right).
+                        <br/>- WHEN IT REACHES THE SPECIFIED POSITION, the element GET FIXED & the following elements scroll past it either from above or beneath depending upon the z-index.
+                        <br/>- The positioned element WHEN FIXED, DOES NOT SCROLLS with the page.
+                        <br/>- In order to determine its dimension or position (for properties like width:100% or top:50px), the element directly refers the html element & DOES NOT recursively searches for a non-static parent.
+                        <br/>- The following element CANNOT OCCUPY the space since it does not vacate the space till it is scrolled to the specified position.                    
+                        <div class="position-demo-container" style="position:relative">
+                            <div style="height:140px;background:#1993EB;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste nesciunt beatae voluptatibus! Nobis porro nam doloremque architecto quaerat ad cumque officiis vitae dicta sed! Sint mollitia odio quod corporis. Lorem ipsum dolor, sit amet.</div>
+                            <div style="height:60px;background:#D8D8D8;position:sticky;bottom:0px;left:0;z-index:1000;">Sticky positioned - This element sticks to the bottom</div>
                             <div style="height:40px;background:#BF7936;"></div>
                         </div>
                     </li>
