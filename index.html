@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- INTERNAL -->
         <style>
             body{
@@ -16,7 +17,7 @@
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
-                width:1020px;
+                max-width:1020px;
                 padding: 0px 60px;
                 box-sizing: border-box;
                 margin:0 auto;
@@ -34,7 +35,7 @@
                 margin:0px 12px;
             }
 
-            /* ****************     Pre-Header      **************** */
+            /* -------- Pre-Header styles -------- */
             
             .pre-header{
                 width:100%;
@@ -52,7 +53,7 @@
                 background: rgba(255, 255, 255, 1);
                 position:sticky;
                 top:0;
-                width:900px;
+                max-width:900px;
                 padding:26px 0px;
                 border-top:5px solid #BF7936;
                 border-bottom:1px solid #D8D8D8;
@@ -162,6 +163,12 @@
             #btnSendMessage:hover{
                 background: #9c0a69;
             }
+
+            .clearfix::after{
+                clear:both;
+                display:table;
+                content:""
+            }
         </style>
     </head>
     <body>
@@ -169,18 +176,16 @@
             Github: https://github.com/vivaanss<span class="separator">|</span>LinkedIn: https://linkedin.com/vivaanss
         </div>
         <header>
-            <table style="width:100%">
-                <tr>
-                    <td style="width:100px">                         
-                        <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
-                    </td>
-                    <td style="padding:0px 26px">
-                        <div id="myName">Vivaan Shekhar Sharma</div> 
-                        <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
-                        <div id="myCollege">United College Of Engineering, Mumbai</div>  
-                    </td>
-                </tr>
-            </table>
+            <div class="clearfix" style="width:100%">
+                <div style="width:100px;float:left">                         
+                    <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
+                </div>
+                <div style="padding:0px 26px;float:left">
+                    <div id="myName">Vivaan Shekhar Sharma</div> 
+                    <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
+                    <div id="myCollege">United College Of Engineering, Mumbai</div>  
+                </div>
+            </div>
         </header>
         <main>
             <table style="width:100%">
@@ -315,13 +320,13 @@
                 </div>
             </div>
         </footer>
-        <div style="width:60px;height:60px;background-color:#1993EB;color:#fff;padding:10px;box-sizing:border-box;text-align:cente;border-radius:50%;position:fixed;bottom:10px;right:50px">
-            <i class="fi fi-rr-arrow-small-up"></i>
+        <div style="width:50px;height:50px;background-color:#1993EB;color:#fff;padding:14px 10px;box-sizing:border-box;text-align:center;border-radius:50%;position:fixed;bottom:10px;right:50px">
+            <i class="fa fa-chevron-up" style="font-size:20px;"></i>
         </div>
         <details id="notes" style="display:block;margin-top:10px;padding-top:10px;border-top:1px dotted #ccc;">
             <summary style="padding-bottom:10px;color:#1993EB">Notes</summary>
             <section>
-                LEARNING-FLOW
+                <div class="section-heading">LEARNING-FLOW</div>
                 <ol>
                     <li>Built HTML Skeleton With <b>table</b> - the only way to create columns with standalone html</li>
                     <li>
@@ -338,10 +343,15 @@
                             <li>Every cell in the column takes the same width.</li>
                         </ul>
                     </li>
+                    <li>
+                        Positions are not used for skeletons because elements get place at hardcoded positions which creates problems with responsiveness.<br/>
+                        Positions are used generally for fixing/sticking non-skeleton elements
+                    </li>
+                    <li>Float & Clear properties are used as a hacky solution to create a column-skeleton till Flex didnt exist.</li>
                 </ol>
             </section>
             <section>
-                DESIGN-THINKING
+                <div class="section-heading">DESIGN-THINKING</div>
                 <ol>
                     <li>Designers "design", frontend-devs "convert" & build "dynamic-ui"</li>
                     <li>Key Design Principles - User Centricity, Usability, Aesthetics & Minimalism, Consistency & Standards<br/>Why? Not always will you get the desings from the designers</li>
@@ -359,7 +369,7 @@
                 </ol>
             </section>
             <section>
-                CSS - BASICS
+                <div class="section-heading">CSS - BASICS</div>
                 <ol>
                     <li>Css stands for "Cascading" "Style" "Sheet"
                         <ul>
@@ -419,11 +429,8 @@
                         width:100%;color:#ffffff;padding:10px;box-sizing:border-box;
                     }
                 </style>
-                CSS POSITIONS : STATIC / RELATIVE / ABSOLUTE / FIXED / STICKY
+                <div class="section-heading">CSS POSITIONS : STATIC / RELATIVE / ABSOLUTE / FIXED / STICKY</div>
                 <ol>
-                    <li>Summary
-                        
-                    </li>
                     <li>
                         position:static -
                         <br/>- The default position of the element.
@@ -488,9 +495,80 @@
                     </li>
                 </ol>
             </section>
+            <section class="float-demo-container">
+                <div class="section-heading">FLOAT & CLEAR -</div>
+                    Summary -
+                    <ol>
+                        <li>Float property is to wrap text around the images just like print-media (newspaper/magzines)</li>
+                        <li>Since float can align elements next to each other, it started to be used as a hacky solution for developing skeletons.</li>
+                        <li>Order of elements in which they are floated matters. If you change it the design wold be impacted.</li>
+                        <li>The effect of float trickles to the subsequent elements as well. 'Clear' property is used get rid of this trickling effect from the previous elements.</li>
+                        <li>Float may impact the height of the container. If all elements inside a container are floated, the container finds no element inside it and loses its height. In order to retain the height of the contain, atleast one element has to be placed(sacrificed) with 'clear' property having no-floating effect. The .clearfix class with the pseudo-element::after selector is a much elegant solution to handle this.</li>
+                        <li>DO NOT USE FLOAT for making column-skeletons now. USE FLEX INSTEAD.</li>
+                    </ol>
+                    <br/>Demo -
+                    <ol>
+                        <li>Float Demo 1 : Float Left
+                            <div style="text-align:justify">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg" style="border-radius:10px;width:100px;float:left;margin:5px 20px 5px 0px;"/>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim assumenda consectetur, blanditiis corporis consequuntur ratione quia repudiandae hic harum dolore dolorem corrupti modi, est earum expedita exercitationem esse! Facere et facilis asperiores iste laboriosam, quidem voluptate perferendis cupiditate ex ipsum incidunt blanditiis sapiente quo quis animi impedit? Necessitatibus nostrum deleniti doloremque maxime in. Dolore voluptatem laborum facilis alias necessitatibus blanditiis explicabo enim veniam omnis atque iure est, qui iste rerum laboriosam dignissimos consequuntur non beatae! Harum accusantium ratione atque eligendi placeat eius, nam tempora officiis itaque tenetur incidunt architecto, illum repellat pariatur provident quae non impedit. Dolorem, quas at.
+                            </div>
+                            <br/>
+                        </li>
+                        <li>Float Demo 2 : Float Right
+                            <div style="text-align:justify">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg" style="border-radius:10px;width:100px;float:right;margin:5px 0px 5px 20px;"/>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim assumenda consectetur, blanditiis corporis consequuntur ratione quia repudiandae hic harum dolore dolorem corrupti modi, est earum expedita exercitationem esse! Facere et facilis asperiores iste laboriosam, quidem voluptate perferendis cupiditate ex ipsum incidunt blanditiis sapiente quo quis animi impedit? Necessitatibus nostrum deleniti doloremque maxime in. Dolore voluptatem laborum facilis alias necessitatibus blanditiis explicabo enim veniam omnis atque iure est, qui iste rerum laboriosam dignissimos consequuntur non beatae! Harum accusantium ratione atque eligendi placeat eius, nam tempora officiis itaque tenetur incidunt architecto, illum repellat pariatur provident quae non impedit. Dolorem, quas at.
+                            </div>
+                            <br/>
+                        </li>
+                        <li>
+                            Float Demo 3 : Float Left & Right
+                            <div style="text-align:justify">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg" style="border-radius:10px;width:100px;float:left;margin:5px 20px 5px 0px;"/>
+                                <img src="https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-iron-man-infinity-war-720x720.jpg" style="border-radius:10px;margin:5px 0px 5px 20px;float:right;width:78px;"/>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim assumenda consectetur, blanditiis corporis consequuntur ratione quia repudiandae hic harum dolore dolorem corrupti modi, est earum expedita exercitationem esse! Facere et facilis asperiores iste laboriosam, quidem voluptate perferendis cupiditate ex ipsum incidunt blanditiis sapiente quo quis animi impedit? Necessitatibus nostrum deleniti doloremque maxime in. Dolore voluptatem laborum facilis alias necessitatibus blanditiis explicabo enim veniam omnis atque iure est, qui iste rerum laboriosam dignissimos consequuntur non beatae! Harum accusantium ratione atque eligendi placeat eius, nam tempora officiis itaque tenetur incidunt architecto, illum repellat pariatur provident quae non impedit. Dolorem, quas at.                
+                            </div>
+                            <br/>
+                        </li>
+                        <li>
+                            Float Demo 4 : Float Left & Left
+                            <div style="text-align:justify">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg" style="border-radius:10px;width:100px;float:left;margin:5px 20px 5px 0px;"/>
+                                <img src="https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-iron-man-infinity-war-720x720.jpg" style="border-radius:10px;margin:5px 20px 5px 0px;float:left;width:78px;"/>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim assumenda consectetur, blanditiis corporis consequuntur ratione quia repudiandae hic harum dolore dolorem corrupti modi, est earum expedita exercitationem esse! Facere et facilis asperiores iste laboriosam, quidem voluptate perferendis cupiditate ex ipsum incidunt blanditiis sapiente quo quis animi impedit? Necessitatibus nostrum deleniti doloremque maxime in. Dolore voluptatem laborum facilis alias necessitatibus blanditiis explicabo enim veniam omnis atque iure est, qui iste rerum laboriosam dignissimos consequuntur non beatae! Harum accusantium ratione atque eligendi placeat eius, nam tempora officiis itaque tenetur incidunt architecto, illum repellat pariatur provident quae non impedit. Dolorem, quas at.                
+                            </div>
+                            <br/>
+                        </li>
+                        <li>
+                            Float Demo 5 : Float Right & Right
+                            <div style="text-align:justify">
+                                <img src="https://is3-ssl.mzstatic.com/image/thumb/ZypiNEdbU0wwCF0GMJ3zoA/1200x675mf.jpg" style="border-radius:10px;width:100px;float:right;margin:5px 0px 5px 20px;"/>
+                                <img src="https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-iron-man-infinity-war-720x720.jpg" style="border-radius:10px;margin:5px 0px 5px 20px;float:right;width:78px;"/>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi enim assumenda consectetur, blanditiis corporis consequuntur ratione quia repudiandae hic harum dolore dolorem corrupti modi, est earum expedita exercitationem esse! Facere et facilis asperiores iste laboriosam, quidem voluptate perferendis cupiditate ex ipsum incidunt blanditiis sapiente quo quis animi impedit? Necessitatibus nostrum deleniti doloremque maxime in. Dolore voluptatem laborum facilis alias necessitatibus blanditiis explicabo enim veniam omnis atque iure est, qui iste rerum laboriosam dignissimos consequuntur non beatae! Harum accusantium ratione atque eligendi placeat eius, nam tempora officiis itaque tenetur incidunt architecto, illum repellat pariatur provident quae non impedit. Dolorem, quas at.                
+                            </div>
+                            <br/>
+                        </li>
+                        <li>
+                            Float Demo 6 : Making Columns Using Floating Divs & Clear Property
+                            <div style="border:1px solid #cccccc">
+                                <div style="width:33%;padding:15px;box-sizing:border-box;text-align:justify;float:left;">1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, sint illum suscipit neque quo aspernatur ?</div>
+                                <div style="width:34%;padding:15px;box-sizing:border-box;text-align:justify;float:left;">2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque rerum consequatur reiciendis cum aspernatur pariatur quisquam laboriosam </div>
+                                <div style="width:33%;padding:15px;box-sizing:border-box;text-align:justify;float:left;">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ex amet quis perspiciatis deb</div>
+                                <div style="clear:both;width:100%;padding:15px;box-sizing:border-box;text-align:justify;">4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ex amet quis perspiciatis deb</div>
+                            </div>
+                            <br/>
+                        </li>
+                    </ol>
+                </div>
+            </section>
         </details>
        
     </body>
+    <section class="flex-demo-container">
+        <div></div>
+
+    </section>
 
     <!-- 
         CSS-BOX-MODEL
