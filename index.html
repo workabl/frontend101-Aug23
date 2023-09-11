@@ -17,7 +17,9 @@
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
-                width:1020px;
+                width:100%;
+                max-width:1020px;
+                min-width:600px;
                 padding: 0px 60px;
                 box-sizing: border-box;
                 margin:0 auto;
@@ -53,10 +55,16 @@
                 background: rgba(255, 255, 255, 1);
                 position:sticky;
                 top:0;
-                width:900px;
+                width:100%;
+                max-width:900px;
                 padding:26px 0px;
                 border-top:5px solid #BF7936;
                 border-bottom:1px solid #D8D8D8;
+                display:flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap:10px 26px;
+                align-items: flex-start;
             }
 
             #profilePicImage{
@@ -82,6 +90,11 @@
             main{
                 width:100%;
                 padding:26px 0px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap:nowrap;
+                gap:0px 26px;
+                align-items:flex-start;
             }
 
             .section-heading, footer .heading{
@@ -169,6 +182,22 @@
                 display:table;
                 content:""
             }
+
+            @media only screen and (max-width: 640px) {
+                body{
+                    padding: 0px 30px;
+                }
+
+                main{
+                    flex-wrap:wrap;
+                }
+
+                main > div{
+                    flex-grow:1 !important;
+                    width:100%;
+                }
+            }
+            
         </style>
     </head>
     <body>
@@ -176,137 +205,131 @@
             Github: https://github.com/vivaanss<span class="separator">|</span>LinkedIn: https://linkedin.com/vivaanss
         </div>
         <header>
-            <div class="clearfix" style="width:100%">
-                <div style="width:100px;float:left">                         
-                    <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
-                </div>
-                <div style="padding:0px 26px;float:left">
-                    <div id="myName">Vivaan Shekhar Sharma</div> 
-                    <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
-                    <div id="myCollege">United College Of Engineering, Mumbai</div>  
-                </div>
+            <div style="width:100px">                         
+                <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
+            </div>
+            <div style="">
+                <div id="myName">Vivaan Shekhar Sharma</div> 
+                <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
+                <div id="myCollege">United College Of Engineering, Mumbai</div>  
             </div>
         </header>
-        <main>
-            <table style="width:100%">
-                <tr>
-                    <td style="width:50%;padding-right:13px;box-sizing:border-box;">
-                        <section id="profile">
-                            <div class="section-heading">Profile</div>
-                            <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
-                        </section>
-                        <section id="education">
-                            <div class="section-heading">Education</div>
-                            <div class="section-content">
-                                <ul>
-                                    <li>
-                                        <div id="li-heading" class="li-heading">Bachelor of Technology (B.Tech)</div>
-                                        <div class="li-content">
-                                            2015 - 2019<br/>
-                                            United College of Engineering, Mumbai University<br/>
-                                            Score: 3.4/4.0 GPA
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">Higher Secondary (XII)</div>
-                                        <div class="li-content">
-                                            2015<br/>
-                                            St. Stephens High School, Mumbai<br/>
-                                            Score: 86%
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">Higher Secondary (XII)</div>
-                                        <div class="li-content">
-                                            2013<br/>
-                                            St. Stephens High School, Mumbai<br/>
-                                            Score: 90%
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                        <section id="skills">
-                            <div class="section-heading">Key Skills</div>
-                            <div class="section-content">
-                                <ul>
-                                    <li>
-                                        <div class="li-heading">Technical</div>
-                                        <div class="li-content">
-                                            Figma, Sketch, Photoshop, Illustrator, Html/Css, Premiere Pro, After Effects
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">Non-Technical</div>
-                                        <div class="li-content">
-                                            Communication, Time management, Teamwork, Creativity, Attention to details, Desire to learn, Meeting deadlines
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                    </td>
-                    <td style="width:50%;padding-left:13px;box-sizing:border-box">
-                        <section id="interships">
-                            <div class="section-heading">Internships</div>
-                            <div class="section-content">
-                                <ul>
-                                    <li>
-                                        <div class="li-heading">Fullstack Development Intern, Infosoft</div>
-                                        <div class="li-content">
-                                            <div class="text-light">Jan 2023 - Present</div>
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">Frontend Development Intern, FireWeb</div>
-                                        <div class="li-content">
-                                            <div class="text-light">Dec 2022- Apr 2021</div>
-                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                        <section id="trainings">
-                            <div class="section-heading">Trainings</div>
-                            <div class="section-content">
-                                <ul>
-                                    <li>
-                                        <div class="li-heading">Complete Web Development Bootcamp - MERN Stack</div>
-                                        <div class="li-content">
-                                            <div class="text-light">Udemy.com</div>
-                                            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">AWS Cloud Fundamentals</div>
-                                        <div class="li-content">
-                                            <div class="text-light">aCloudGuru.com</div>
-                                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi cons equ uatur.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                        <section id="projects">
-                            <div class="section-heading">Projects</div>
-                            <div class="section-content">
-                                <ul>
-                                    <li>
-                                        <div class="li-heading">Event Management Process Automation</div>
-                                        <div class="li-content">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo pariatur</div>
-                                    </li>
-                                    <li>
-                                        <div class="li-heading">Developing Highly Scalable REST Services</div>
-                                        <div class="li-content">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi con seq.</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                    </td>
-                </tr>
-            </table>
+        <main>            
+            <div id="testId" style="width:50%;box-sizing:border-box;">
+                <section id="profile">
+                    <div class="section-heading">Profile</div>
+                    <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
+                </section>
+                <section id="education">
+                    <div class="section-heading">Education</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>
+                                <div id="li-heading" class="li-heading">Bachelor of Technology (B.Tech)</div>
+                                <div class="li-content">
+                                    2015 - 2019<br/>
+                                    United College of Engineering, Mumbai University<br/>
+                                    Score: 3.4/4.0 GPA
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li-heading">Higher Secondary (XII)</div>
+                                <div class="li-content">
+                                    2015<br/>
+                                    St. Stephens High School, Mumbai<br/>
+                                    Score: 86%
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li-heading">Higher Secondary (XII)</div>
+                                <div class="li-content">
+                                    2013<br/>
+                                    St. Stephens High School, Mumbai<br/>
+                                    Score: 90%
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="skills">
+                    <div class="section-heading">Key Skills</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>
+                                <div class="li-heading">Technical</div>
+                                <div class="li-content">
+                                    Figma, Sketch, Photoshop, Illustrator, Html/Css, Premiere Pro, After Effects
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li-heading">Non-Technical</div>
+                                <div class="li-content">
+                                    Communication, Time management, Teamwork, Creativity, Attention to details, Desire to learn, Meeting deadlines
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div style="width:50%;box-sizing:border-box">
+                <section id="interships">
+                    <div class="section-heading">Internships</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>
+                                <div class="li-heading">Fullstack Development Intern, Infosoft</div>
+                                <div class="li-content">
+                                    <div class="text-light">Jan 2023 - Present</div>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li-heading">Frontend Development Intern, FireWeb</div>
+                                <div class="li-content">
+                                    <div class="text-light">Dec 2022- Apr 2021</div>
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="trainings">
+                    <div class="section-heading">Trainings</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>
+                                <div class="li-heading">Complete Web Development Bootcamp - MERN Stack</div>
+                                <div class="li-content">
+                                    <div class="text-light">Udemy.com</div>
+                                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li-heading">AWS Cloud Fundamentals</div>
+                                <div class="li-content">
+                                    <div class="text-light">aCloudGuru.com</div>
+                                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi cons equ uatur.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="projects">
+                    <div class="section-heading">Projects</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>
+                                <div class="li-heading">Event Management Process Automation</div>
+                                <div class="li-content">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo pariatur</div>
+                            </li>
+                            <li>
+                                <div class="li-heading">Developing Highly Scalable REST Services</div>
+                                <div class="li-content">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi con seq.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </main>
         <footer>
             <div class="heading">Get In Touch</div>
@@ -348,6 +371,8 @@
                         Positions are used generally for fixing/sticking non-skeleton elements
                     </li>
                     <li>Float & Clear properties are used as a hacky solution to create a column-skeleton till Flex didnt exist.</li>
+                    <li>Flex is the native solution to create column-skeleton</li>
+                    <li>Media-queries are the native css-solution to achieve responsiveness.</li>
                 </ol>
             </section>
             <section>
@@ -378,11 +403,20 @@
                             <li>"Cascading" - Properties cascade down from multiple selectors from internal & external css and inline-styles, and finally applied based on the order of evaluation.</li>
                         </ul>
                     </li>
+                    <li>Order of Evaluation - When css encounters confliting property from mutiple sources, it applies the order of evaluation to choose one of the options. 
+                        <ol>
+                            <li>Although the evaluation logic has multiple rules, the simplest way to understand is the property with most-specific reference to the particular element would be applied.</li>
+                            <li>For ex. All students of the college 'X' must wear white-shirt. Students from IT branch of 'X' must wear blue shirt. Sagar from IT banch college 'X' would wear black shirt. Then Sagar would wear black shirt while other IT student would wear blue and the rest of the college would wear white.</li>
+                            <li>Add the !important tag to the property (like width: 100px !important;), if you want to override this behaviour of evaluation and force that selected property to apply in case of conflicts. If muptiple properties with important tag conflicts, the order of evaluation is applied between the important-properties only.</li>
+                        </ol>
+                    </li>
                     <li>Basic structure of Properties - PropertyName: Value Unit ; For ex. background-color:#cccccc; width:100px;</li>
                     <li>Selectors
                         <ul>
                             <li>Simple - Universal *{}, Element div{}, Id #id{}, Class .heading{}, Attribute section[id="profile"]{}</li>
                             <li>Combinator - Descendant section div{}, Child section>div{}</li>
+                            <li>UserAction - for ex. selector:hover{} add properties upon user-actions like hover, focus etc. We used it on the button hover to change its background-color.</li>
+                            <li>Pseudo Element - Adds content to the page via css. You can easily spot them with '::' as in 'body::after{}'. Remember the .clearfix class that was added to clear the effect of float. It used the ::after pseudo-element selector.</li>
                         </ul>
                     </li>
                     <li>
@@ -562,13 +596,89 @@
                     </ol>
                 </div>
             </section>
+            <section class="flex-demo-container">
+                <div class="section-heading">FLEXBOX -</div>
+                Summary -
+                    <ol>
+                        <li>Flex are native css solution to build column layout</li>
+                        <li>Flex can also be used for achieving responsiveness</li>
+                        <li>Flex has two basic rules -
+                            <ol>
+                                <li>Parent-Child Relationship - The parent often referred to as 'container' sets the rules for all it's children often called flex-items.</li>
+                                <li>Unidrectional - All flex-items can only be aligned in one-direction only i.e row or columns.</li>
+                            </ol>
+                        </li>
+                        <li>The flex-direction determines the main-axis and cross-axis is properteis on which properties like align-content, justify-content work.</li>
+                        <li>In flex properties, 
+                            <ol>
+                                <li>'content' refers to the extra space left in the container around the items</li>
+                                <li>'justify' refers to applying the property on the main-axis.</li>
+                                <li>'align' refers to applying the property on the cross-axis.</li>
+                            </ol>
+                        </li>
+                        <li>If not using any css-frameworks like bootstrap or tailwind, USE FLEX for making column-skeletons now.</li>
+                        <li>Refer for flexbox properties - https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+                    </ol>
+                <style>
+                    .flex-container{
+                        border: 1px solid #ccc;
+                        box-sizing:border-box;
+                        height:800px;
+                        display:flex;
+                        flex-direction:row;
+                        flex-wrap:wrap; /* flex-flow: row wrap */
+                        /* content - managing extra-space within the container */
+                        /* item - managing items within the container */
+                        /* justify - managing on the main-axis */
+                        /* align - managing on the cross-axis */
+                        justify-content:flex-start;
+                        align-content:flex-start;
+                        align-items:flex-start;
+                        gap:30px;
+                        
+                    }
+        
+                    .flex-item{
+                        background-color: whitesmoke;
+                        padding:10px;
+                        width:30%;
+                        text-align: justify;
+                        box-sizing: border-box;
+                    }
+                </style>
+                
+                <br/>
+                <br/>
+                <div class="flex-container">
+                    <div class="flex-item" style="order:1;">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in magni temporibus molestiae quibusdam officiis exercitationem delectus sequi, at esse consectetur, repudiandae, beatae vero totam similique? Vel molestias, modi voluptatum dolores quam nam repellendus dolorem?</div>
+                    <div class="flex-item" style="order:2;flex-grow:1">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem nesciunt modi qui rerum nihil ullam voluptates maxime optio fugiat necessitatibus assumenda itaque quaerat beatae ducimus molestias dolorem ratione, velit doloremque, vitae illo eaque autem? Aspernatur excepturi optio, nihil earum cupiditate cum. Laborum, pariatur nulla.</div>
+                    <div class="flex-item" style="order:3;flex-grow:1;align-self:flex-start">3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda iste, ea ex dolores quo doloremque provident fuga consectetur pariatur animi!</div>
+                    <div class="flex-item" style="order:4;flex-grow:0">4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reprehenderit maxime minima ullam nesciunt quam, unde natus perferendis magnam in laborum id necessitatibus deleniti aspernatur obcaecati, fugit sunt rerum ab.</div>
+                    <div class="flex-item" style="order:5;flex-grow:0">5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quo nobis ullam nam reiciendis pariatur quae ab! Tempora in dicta iusto saepe recusandae vitae reiciendis at autem, iure commodi consequatur aspernatur hic unde quae eius quia dolorem magnam facere sapiente?</div>
+                </div>
+            </section>
+            <section class="flex-demo-container">
+                <br/><br/>
+                <div class="section-heading">CSS MEDIA QUERIES -</div>
+                Summary -
+                <ol>
+                    <li>Media queries are used to add classes specific to a partifuclar range of screen resoultion.</li>
+                    <li>Media queries are used to enable responsiveness.</li>
+                    <li>Responsive design is a design that can adjust to all screens i.e. mobiles, tablets and desktops.</li>
+                    <li>Responsive Designing = Manage Resizing + Manage Repositioning</li>
+                    <li>For ex, the following would be applied to body when width is less than 640px.<br/>
+                        @media only screen and (max-width: 640px) {
+                            body{
+                                padding: 0px 30px;
+                            }
+                        }
+                    </li>
+                </ol>
+            </section>
         </details>
        
     </body>
-    <section class="flex-demo-container">
-        <div></div>
-
-    </section>
+    
 
     <!-- 
         CSS-BOX-MODEL
@@ -585,5 +695,19 @@
         btnSendMessage : Camel Case
         footer-label : Kebab Casing
         footer_label : Snake Casing
+
+        With Flexbox you can do responsive desigining
+            - parent (container)-child(flex-item) relationship
+            - Unidirectional
+                flex-dir    : row       col
+                main-axis   : x-axis | y-axis
+                cross-axis  : y-axis | x-axis
+        
+        RESPONSIVE DESIGN
+        - Resizing: Grow/Shrink
+        - Repositioning
+        
+        CSS-MEDIA-QUERIES
+        
     -->
 </html>
