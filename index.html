@@ -13,6 +13,10 @@
         
         <!-- INTERNAL -->
         <style>
+            :root{
+                --body-internal-max-width: 900px;
+            }
+
             body{
                 font-family: 'Hind', sans-serif;
                 color: #7A7A7A;
@@ -21,8 +25,6 @@
                 font-weight: 400;
                 width:100%;
                 max-width:1020px;
-                min-width:600px;
-                padding: 0px 60px;
                 box-sizing: border-box;
                 margin:0 auto;
             }
@@ -50,23 +52,18 @@
                 padding:2px 10px;
                 font-size: 12px;
                 box-sizing: border-box;
+                max-width: var(--body-internal-max-width);
             }
 
             /* -------- Header styles -------- */
             header{
                 background: rgba(255, 255, 255, 1);
-                position:sticky;
-                top:0;
                 width:100%;
-                max-width:900px;
+                max-width: var(--body-internal-max-width);
                 padding:26px 0px;
                 border-top:5px solid #BF7936;
                 border-bottom:1px solid #D8D8D8;
-                display:flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
                 gap:10px 26px;
-                align-items: flex-start;
             }
 
             #profilePicImage{
@@ -91,12 +88,8 @@
 
             main{
                 width:100%;
-                padding:26px 0px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap:nowrap;
-                gap:0px 26px;
-                align-items:flex-start;
+                padding:26px 0px;  
+                max-width:900px;                      
             }
 
             .section-heading, footer .heading{
@@ -129,6 +122,7 @@
                 width:100%;
                 border-top:1px solid #D8D8D8;
                 padding:26px 0px;
+                max-width:900px;
             }    
             
             .footer-label{
@@ -136,7 +130,7 @@
             }
 
             .text-light{
-                color: #979797;
+                color: #979797 !important;
             }
 
             #txtMessage{
@@ -184,153 +178,142 @@
                 display:table;
                 content:""
             }
-
-            @media only screen and (max-width: 640px) {
-                body{
-                    padding: 0px 30px;
-                }
-
-                main{
-                    flex-wrap:wrap;
-                }
-
-                main > div{
-                    flex-grow:1 !important;
-                    width:100%;
-                }
-            }
             
         </style>
     </head>
-    <body>
-        <div class="pre-header">
+    <body class="px-3 px-lg-5">
+        <div class="pre-header d-none d-sm-block">
             Github: https://github.com/vivaanss<span class="separator">|</span>LinkedIn: https://linkedin.com/vivaanss
         </div>
-        <header>
+        <header class="d-flex flex-row flex-nowrap align-items-start position-sticky top-0">
             <div style="width:100px">                         
                 <img id="profilePicImage" src="./assets/img/profile.jpeg"/> 
             </div>
-            <div style="">
+            <div class="flex-grow-1">
                 <div id="myName">Vivaan Shekhar Sharma</div> 
                 <div id="myInfo">vivaanss@gmail.com<span class="separator">|</span>+91 9733259550<span class="separator">|</span>www.vivaanss.me<span class="separator">|</span>Mumbai</div>
                 <div id="myCollege">United College Of Engineering, Mumbai</div>  
             </div>
         </header>
-        <main>            
-            <div id="testId" style="width:50%;box-sizing:border-box;">
-                <section id="profile">
-                    <div class="section-heading">Profile</div>
-                    <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
-                </section>
-                <section id="education">
-                    <div class="section-heading">Education</div>
-                    <div class="section-content">
-                        <ul>
-                            <li>
-                                <div id="li-heading" class="li-heading">Bachelor of Technology (B.Tech)</div>
-                                <div class="li-content">
-                                    2015 - 2019<br/>
-                                    United College of Engineering, Mumbai University<br/>
-                                    Score: 3.4/4.0 GPA
-                                </div>
-                            </li>
-                            <li>
-                                <div class="li-heading">Higher Secondary (XII)</div>
-                                <div class="li-content">
-                                    2015<br/>
-                                    St. Stephens High School, Mumbai<br/>
-                                    Score: 86%
-                                </div>
-                            </li>
-                            <li>
-                                <div class="li-heading">Higher Secondary (XII)</div>
-                                <div class="li-content">
-                                    2013<br/>
-                                    St. Stephens High School, Mumbai<br/>
-                                    Score: 90%
-                                </div>
-                            </li>
-                        </ul>
+        <main> 
+            <div class="container-fluid">
+                <div class="row gx-5">                       
+                    <div class="col-12 col-sm-6">
+                        <section id="profile">
+                            <div class="section-heading">Profile</div>
+                            <div class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</div>
+                        </section>
+                        <section id="education">
+                            <div class="section-heading">Education</div>
+                            <div class="section-content">
+                                <ul>
+                                    <li>
+                                        <div id="li-heading" class="li-heading">Bachelor of Technology (B.Tech)</div>
+                                        <div class="li-content">
+                                            2015 - 2019<br/>
+                                            United College of Engineering, Mumbai University<br/>
+                                            Score: 3.4/4.0 GPA
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">Higher Secondary (XII)</div>
+                                        <div class="li-content">
+                                            2015<br/>
+                                            St. Stephens High School, Mumbai<br/>
+                                            Score: 86%
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">Higher Secondary (XII)</div>
+                                        <div class="li-content">
+                                            2013<br/>
+                                            St. Stephens High School, Mumbai<br/>
+                                            Score: 90%
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="skills">
+                            <div class="section-heading">Key Skills</div>
+                            <div class="section-content">
+                                <ul>
+                                    <li>
+                                        <div class="li-heading">Technical</div>
+                                        <div class="li-content">
+                                            Figma, Sketch, Photoshop, Illustrator, Html/Css, Premiere Pro, After Effects
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">Non-Technical</div>
+                                        <div class="li-content">
+                                            Communication, Time management, Teamwork, Creativity, Attention to details, Desire to learn, Meeting deadlines
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
                     </div>
-                </section>
-                <section id="skills">
-                    <div class="section-heading">Key Skills</div>
-                    <div class="section-content">
-                        <ul>
-                            <li>
-                                <div class="li-heading">Technical</div>
-                                <div class="li-content">
-                                    Figma, Sketch, Photoshop, Illustrator, Html/Css, Premiere Pro, After Effects
-                                </div>
-                            </li>
-                            <li>
-                                <div class="li-heading">Non-Technical</div>
-                                <div class="li-content">
-                                    Communication, Time management, Teamwork, Creativity, Attention to details, Desire to learn, Meeting deadlines
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="col-12 col-sm-6">
+                        <section id="interships">
+                            <div class="section-heading">Internships</div>
+                            <div class="section-content">
+                                <ul>
+                                    <li>
+                                        <div class="li-heading">Fullstack Development Intern, Infosoft</div>
+                                        <div class="li-content">
+                                            <div class="text-light">Jan 2023 - Present</div>
+                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">Frontend Development Intern, FireWeb</div>
+                                        <div class="li-content">
+                                            <div class="text-light">Dec 2022- Apr 2021</div>
+                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="trainings">
+                            <div class="section-heading">Trainings</div>
+                            <div class="section-content">
+                                <ul>
+                                    <li>
+                                        <div class="li-heading">Complete Web Development Bootcamp - MERN Stack</div>
+                                        <div class="li-content">
+                                            <div class="text-light">Udemy.com</div>
+                                            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">AWS Cloud Fundamentals</div>
+                                        <div class="li-content">
+                                            <div class="text-light">aCloudGuru.com</div>
+                                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi cons equ uatur.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="projects">
+                            <div class="section-heading">Projects</div>
+                            <div class="section-content">
+                                <ul>
+                                    <li>
+                                        <div class="li-heading">Event Management Process Automation</div>
+                                        <div class="li-content">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo pariatur</div>
+                                    </li>
+                                    <li>
+                                        <div class="li-heading">Developing Highly Scalable REST Services</div>
+                                        <div class="li-content">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi con seq.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
                     </div>
-                </section>
-            </div>
-            <div style="width:50%;box-sizing:border-box">
-                <section id="interships">
-                    <div class="section-heading">Internships</div>
-                    <div class="section-content">
-                        <ul>
-                            <li>
-                                <div class="li-heading">Fullstack Development Intern, Infosoft</div>
-                                <div class="li-content">
-                                    <div class="text-light">Jan 2023 - Present</div>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="li-heading">Frontend Development Intern, FireWeb</div>
-                                <div class="li-content">
-                                    <div class="text-light">Dec 2022- Apr 2021</div>
-                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section id="trainings">
-                    <div class="section-heading">Trainings</div>
-                    <div class="section-content">
-                        <ul>
-                            <li>
-                                <div class="li-heading">Complete Web Development Bootcamp - MERN Stack</div>
-                                <div class="li-content">
-                                    <div class="text-light">Udemy.com</div>
-                                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="li-heading">AWS Cloud Fundamentals</div>
-                                <div class="li-content">
-                                    <div class="text-light">aCloudGuru.com</div>
-                                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi cons equ uatur.
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section id="projects">
-                    <div class="section-heading">Projects</div>
-                    <div class="section-content">
-                        <ul>
-                            <li>
-                                <div class="li-heading">Event Management Process Automation</div>
-                                <div class="li-content">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo pariatur</div>
-                            </li>
-                            <li>
-                                <div class="li-heading">Developing Highly Scalable REST Services</div>
-                                <div class="li-content">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi con seq.</div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                </div>
             </div>
         </main>
         <footer>
@@ -678,7 +661,7 @@
                 </ol>
             </section>
         </details>
-        <section>
+        <section class="d-none">
             <br/><br/>
             <div class="section-heading">Bootstrap Component Demo -</div>
             <div class="accordion" id="accordionExample">
@@ -813,20 +796,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--
-                Target: xl+xxl - 4cols in row1 & 2cols in row2
-
-            -->
-
-            
-
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            
-
-
-
-
         </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script>
